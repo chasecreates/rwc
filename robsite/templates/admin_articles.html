@@ -1,0 +1,63 @@
+{% extends 'admin_head.html' %}
+
+{% block title %} Articles {% endblock %}
+
+{% block body %}
+
+<!-- Page Content -->
+     
+
+<div id="page-content-wrapper">
+            <div class="container-fluid">
+                <h1>Article Manager</h1>
+                <p>Within this area, you can manage articles.</p>
+                
+                <table class="table">
+  <thead>
+    <tr>
+    
+      <th scope="col">Article Name</th>
+      <th scope="col">Posted</th>
+      <th scope="col">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% if articles %}
+      {% for a in articles %}
+    <tr>
+      
+      <td>{{ a.article }} </td>
+      <td>{{ a.date }}</td>
+      <td>
+          <a href="/admin/articles/edit/{{ a. id }}"><btn class="btn btn-success">Edit</btn></a>
+          <a href="/delete/{{ a.id }}"><btn class="btn btn-danger">Delete</btn></a>
+            
+        
+        
+        </td>
+    </tr>
+      {% endfor %}
+      {% else %}
+<div class="alert alert-danger">
+      No articles posted at this time.</div>
+   {% endif %}
+  </tbody>
+</table>
+                
+                
+                
+                
+                <a href="{{ url_for('admin_articles_add') }}"><btn class="btn btn-primary">Add</btn></a>
+            </p>
+    
+    
+    
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+{% endblock %}

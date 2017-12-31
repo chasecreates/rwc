@@ -1,0 +1,44 @@
+{% extends 'admin_head.html' %}
+
+{% block title %} Add An Article {% endblock %}
+
+{% block body %}
+
+<!-- Page Content -->
+     
+
+<div id="page-content-wrapper">
+            <div class="container-fluid">
+                <h1>Add An Article</h1>
+                <p>Write an article.</p>
+                
+            
+                
+                <form method='POST' action='/add/'>
+                    
+                    <p><input name="title" id="title" type="text" class="form-control" placeholder="Article Name"></p>
+                    
+                    <p><textarea class="form-control" id="body" name="body" placeholder="Body" rows="4" cols="900" style="height:390px;"></textarea></p>
+                    
+                
+                
+                <input type="submit" class="btn btn-primary" value="Post">
+                
+                </form>
+                
+                
+                
+                
+            </p>
+    
+    
+    
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+{% endblock %}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Robb's Corner - {% block title %} {% endblock %}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='admin/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='admin/css/simple-sidebar.css') }}" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="/">
+                        Robb's Corner
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('admin_articles') }}">Articles</a>
+                </li>
+                <li>
+                    <a href="/">Website</a>
+                </li>
+               
+             
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+{% block body %}
+
+{% endblock %}
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static', filename='admin/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>

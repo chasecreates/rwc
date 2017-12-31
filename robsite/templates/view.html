@@ -1,0 +1,36 @@
+{% extends 'header.html' %}
+
+{% block title %} About Us {% endblock %}
+{% block headerdef %}
+    <header class="masthead" style="background-image: url({{ url_for('static', filename='img/newabout-bg.jpg') }}">
+        {% endblock %}
+
+{% block headertitle %} {{ a.article }} {% endblock %}
+{% block subtitle %} By Robb Dehney on {{ a.date.strftime('%A %B %m, %Y') }} {% endblock %}
+
+{% block body %}
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-preview">
+            <a href="#" style="color: #333 !important;" disabled>
+              <h2 class="post-title">
+                {{ a.article }}
+              </h2>
+              <p>{{ a.body }} </p>
+           </a>
+          
+         
+          <hr>
+          <!-- Pager -->
+          <div class="clearfix">
+           
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+{% endblock %}
